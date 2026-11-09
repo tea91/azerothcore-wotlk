@@ -1,25 +1,41 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `npc_spellclick_spells`
+--
+
 DROP TABLE IF EXISTS `npc_spellclick_spells`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `npc_spellclick_spells` 
-(
-  `npc_entry` int(10) unsigned NOT NULL COMMENT 'reference to creature_template',
-  `spell_id` int(10) unsigned NOT NULL COMMENT 'spell which should be casted ',
-  `cast_flags` tinyint(3) unsigned NOT NULL COMMENT 'first bit defines caster: 1=player, 0=creature; second bit defines target, same mapping as caster bit',
-  `user_type` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'relation with summoner: 0-no 1-friendly 2-raid 3-party player can click',
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `npc_spellclick_spells` (
+  `npc_entry` int unsigned NOT NULL COMMENT 'reference to creature_template',
+  `spell_id` int unsigned NOT NULL COMMENT 'spell which should be casted ',
+  `cast_flags` tinyint unsigned NOT NULL COMMENT 'first bit defines caster: 1=player, 0=creature; second bit defines target, same mapping as caster bit',
+  `user_type` smallint unsigned NOT NULL DEFAULT '0' COMMENT 'relation with summoner: 0-no 1-friendly 2-raid 3-party player can click',
   PRIMARY KEY (`npc_entry`,`spell_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `npc_spellclick_spells`
+--
 
 LOCK TABLES `npc_spellclick_spells` WRITE;
 /*!40000 ALTER TABLE `npc_spellclick_spells` DISABLE KEYS */;
-INSERT INTO `npc_spellclick_spells` VALUES 
+INSERT INTO `npc_spellclick_spells` VALUES
 (24083,46598,1,0),
 (24418,43768,3,0),
 (24750,46598,1,0),
@@ -41,10 +57,11 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (26477,61832,1,0),
 (26503,47121,0,0),
 (26523,48296,1,0),
-(26809,47416,0,0),
+(26809,47416,2,1),
 (26813,47424,1,0),
 (27061,47920,1,0),
 (27131,48754,1,0),
+(27213,43671,0,0),
 (27241,46598,1,0),
 (27258,48365,1,0),
 (27354,43671,1,0),
@@ -58,6 +75,7 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (27714,49584,1,0),
 (27761,43671,1,0),
 (27881,60968,1,0),
+(27886,48365,1,1),
 (27894,60682,1,0),
 (27923,46598,1,1),
 (27924,50007,1,0),
@@ -65,7 +83,7 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (27996,50343,1,0),
 (28018,46598,1,0),
 (28054,50556,1,0),
-(28061,50557,1,0),
+(28061,46598,1,0),
 (28094,60968,1,0),
 (28115,46598,1,0),
 (28161,51037,0,0),
@@ -74,7 +92,6 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (28202,50926,1,0),
 (28202,50927,2,0),
 (28203,50918,1,0),
-(28203,50919,2,0),
 (28222,52082,1,0),
 (28312,60968,1,0),
 (28319,60968,1,0),
@@ -82,6 +99,7 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (28379,51658,0,0),
 (28389,51592,1,0),
 (28389,51593,3,0),
+(28399,46598,1,0),
 (28468,46598,1,0),
 (28605,52263,1,0),
 (28606,52263,1,0),
@@ -100,8 +118,6 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (29005,60944,1,0),
 (29351,46598,0,0),
 (29358,46598,0,0),
-(29403,49641,1,0),
-(29414,18277,1,0),
 (29433,47020,1,0),
 (29460,54513,1,0),
 (29488,54568,3,0),
@@ -118,7 +134,7 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (29708,46598,1,0),
 (29708,55028,1,0),
 (29709,55029,1,0),
-(29736,67830,1,0),
+(29736,46598,1,0),
 (29838,46598,1,0),
 (29856,55364,1,0),
 (29857,55460,1,0),
@@ -260,9 +276,7 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (33845,63151,1,0),
 (33870,63663,1,0),
 (34045,65030,1,0),
-(34072,63989,2,0),
-(34072,63997,2,0),
-(34072,63998,2,0),
+(34072,51347,3,0),
 (34106,67830,1,1),
 (34108,67830,1,1),
 (34109,67830,1,1),
@@ -331,13 +345,16 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (36661,46598,1,0),
 (36678,46598,1,0),
 (36794,46598,1,0),
+(36812,69342,1,0),
 (36838,70510,1,0),
 (36839,70510,1,0),
 (36891,46598,1,0),
 (36896,46598,1,0),
 (37227,70104,3,0),
 (37945,70766,3,0),
+(37966,69342,1,0),
 (37968,46598,1,0),
+(37980,69342,1,0),
 (38248,71462,1,2),
 (38430,70766,3,0),
 (38431,46598,1,0),
@@ -355,10 +372,13 @@ INSERT INTO `npc_spellclick_spells` VALUES
 (40725,75953,1,0);
 /*!40000 ALTER TABLE `npc_spellclick_spells` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:14

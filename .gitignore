@@ -2,23 +2,37 @@
 # AzerothCore
 #
 
-conf/*
-!conf/*.dist
-modules/*
+.cache
+/conf/*
+!/conf/dist
+/modules/*
+!/modules/*.md
+!/modules/*.sh
+!/modules/CMakeLists.txt
+!/modules/*.h
+!/modules/*.cmake
+/build*/
+/var/*
+!/var/build/.gitkeep
+!/var/ccache/.gitkeep
+/env/dist/*
+!/env/dist/.gitkeep
+/env/user/*
+/.env*
+/e2e/.env
+/apps/joiner
+/deps/deno
+/data/sql/custom/*
+/src/server/scripts/Custom/*
+!/src/server/scripts/Custom/README.md
 
-#
-# Allow modules to control git ignoring
-#
-!modules/*
-modules/*/*
-!modules/*/.gitignore
-!modules/uwd/*
-modules/uwd/joiner
-!modules/hw-core/*
-!modules/acore/*
-!modules/worldengine/*
+/*.override.yml
+/*.override.yaml
 
-build*/
+!.gitkeep
+
+# default build directory if not specified by CMAKE configuration
+/out/*
 
 #
 #Generic
@@ -42,7 +56,21 @@ CMakeLists.txt.user
 *.LOCAL.*
 
 #
-# IDE & other softwares
+# Agents
+#
+.agents/plans/**
+
+#
+# Claude
+#
+.claude/worktrees
+.claude/settings.local.json
+.claude/plans/**
+.claude/.cc-writes/
+CLAUDE.local.md
+
+#
+# IDE & other software
 #
 /.settings/
 /.externalToolBuilders/*
@@ -51,7 +79,16 @@ nbproject/
 .sync.ffs_db
 *.kate-swp
 .browse.VC*
-.vscode
+.idea
+cmake-build-*/*
+coverage-report/
+.vs
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 #
 # Eclipse
@@ -69,3 +106,29 @@ local.properties
 .project
 .cproject
 
+# vcpkg integration
+/vcpkg/
+/vcpkg-ports/
+
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+
+
+# ==================
+#
+#  CUSTOM
+#
+#  put below your custom ignore rules
+#  for example , if you want to include a
+#  module directly in repositoryyou can do:
+#
+#  !modules/yourmodule
+#
+# ==================
+
+# Live-stack e2e private / local tooling (scratch tests stay uncommitted)
+e2e/local/**
+!e2e/local/README.md
+e2e/go.work
+e2e/go.work.sum

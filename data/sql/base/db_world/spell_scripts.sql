@@ -1,31 +1,47 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `spell_scripts`
+--
+
 DROP TABLE IF EXISTS `spell_scripts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `spell_scripts` 
-(
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `effIndex` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `delay` int(10) unsigned NOT NULL DEFAULT '0',
-  `command` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `datalong2` int(10) unsigned NOT NULL DEFAULT '0',
-  `dataint` int(11) NOT NULL DEFAULT '0',
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `spell_scripts` (
+  `id` int unsigned NOT NULL DEFAULT '0',
+  `effIndex` tinyint unsigned NOT NULL DEFAULT '0',
+  `delay` int unsigned NOT NULL DEFAULT '0',
+  `command` int unsigned NOT NULL DEFAULT '0',
+  `datalong` int unsigned NOT NULL DEFAULT '0',
+  `datalong2` int unsigned NOT NULL DEFAULT '0',
+  `dataint` int NOT NULL DEFAULT '0',
   `x` float NOT NULL DEFAULT '0',
   `y` float NOT NULL DEFAULT '0',
   `z` float NOT NULL DEFAULT '0',
   `o` float NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spell_scripts`
+--
 
 LOCK TABLES `spell_scripts` WRITE;
 /*!40000 ALTER TABLE `spell_scripts` DISABLE KEYS */;
-INSERT INTO `spell_scripts` VALUES 
+INSERT INTO `spell_scripts` VALUES
 (35727,0,0,15,35730,2,0,0,0,0,0),
 (35376,0,0,15,25649,2,0,0,0,0,0),
 (29129,0,0,15,32569,2,0,0,0,0,0),
@@ -91,7 +107,7 @@ INSERT INTO `spell_scripts` VALUES
 (24195,0,0,15,24102,0,0,0,0,0,0),
 (24195,0,0,15,24103,0,0,0,0,0,0),
 (24195,0,0,15,69530,0,0,0,0,0,0),
-(56515,0,0,15,56516,2,0,0,0,0,0),
+(56515,0,0,15,56516,0,0,0,0,0,0),
 (53062,0,0,15,53067,2,0,0,0,0,0),
 (45980,0,1,18,0,0,0,0,0,0,0),
 (51864,0,0,15,51865,2,0,0,0,0,0),
@@ -127,7 +143,6 @@ INSERT INTO `spell_scripts` VALUES
 (58917,0,0,15,58919,0,0,0,0,0,0),
 (53010,0,0,14,52989,0,0,0,0,0,0),
 (50630,0,0,14,46598,0,0,0,0,0,0),
-(55818,0,0,15,55528,1,0,0,0,0,0),
 (37834,0,0,14,32567,0,0,0,0,0,0),
 (68861,0,0,15,68858,2,1,0,0,0,0),
 (69051,0,0,15,69023,3,1,0,0,0,0),
@@ -148,15 +163,24 @@ INSERT INTO `spell_scripts` VALUES
 (29138,2,0,15,29132,2,0,0,0,0,0),
 (46672,2,0,15,46689,2,0,0,0,0,0),
 (38173,0,0,10,22023,12000,0,0,0,0,0),
-(53099,0,0,15,53098,0,0,0,0,0,0),
 (55288,0,0,15,55289,0,0,0,0,0,0),
-(46550,0,0,14,46424,0,0,0,0,0,0);
+(46550,0,0,14,46424,0,0,0,0,0,0),
+(59064,0,0,6,1,0,0,1333.49,-4375.51,26.204,0.104),
+(59439,0,0,6,0,0,0,1969.03,237.55,38.39,3.21),
+(60940,0,0,6,0,0,0,1769.13,772.25,56.22,3.97),
+(24320,0,0,15,24321,2,0,0,0,0,0),
+(25952,0,0,18,0,0,0,0,0,0,0),
+(50499,0,0,15,50493,0,0,0,0,0,0),
+(36153,0,0,15,36141,3,0,0,0,0,0);
 /*!40000 ALTER TABLE `spell_scripts` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:41

@@ -1,29 +1,45 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `areatrigger_teleport`
+--
+
 DROP TABLE IF EXISTS `areatrigger_teleport`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `areatrigger_teleport` 
-(
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
-  `name` text,
-  `target_map` smallint(5) unsigned NOT NULL DEFAULT '0',
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `areatrigger_teleport` (
+  `ID` int unsigned NOT NULL DEFAULT '0',
+  `Name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `target_map` smallint unsigned NOT NULL DEFAULT '0',
   `target_position_x` float NOT NULL DEFAULT '0',
   `target_position_y` float NOT NULL DEFAULT '0',
   `target_position_z` float NOT NULL DEFAULT '0',
   `target_orientation` float NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  FULLTEXT KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Trigger System';
+  PRIMARY KEY (`ID`),
+  FULLTEXT KEY `name` (`Name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Trigger System';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `areatrigger_teleport`
+--
 
 LOCK TABLES `areatrigger_teleport` WRITE;
 /*!40000 ALTER TABLE `areatrigger_teleport` DISABLE KEYS */;
-INSERT INTO `areatrigger_teleport` VALUES 
+INSERT INTO `areatrigger_teleport` VALUES
 (45,'Scarlet Monastery - Graveyard (Entrance)',189,1688.99,1053.48,18.6775,0.00117),
 (78,'DeadMines Entrance',36,-16.4,-383.07,61.78,1.86),
 (101,'Stormwind Stockades Entrance',34,54.23,0.28,-18.34,6.26),
@@ -67,10 +83,11 @@ INSERT INTO `areatrigger_teleport` VALUES
 (924,'Zul\'Farrak Entrance',209,1213.52,841.59,8.93,6.09),
 (943,'Leap of Faith - End of fall',1,-5187.47,-2804.32,-8.375,5.76),
 (1064,'Onyxia\'s Lair - Dustwallow Instance',1,-4747.17,-3753.27,49.8122,0.713271),
-(1466,'Blackrock Mountain - Searing Gorge Instance?',230,458.32,26.52,-70.67,4.95),
+(1466,'Blackrock Depths Entrance',230,456.929,34.0923,-68.0896,4.71239),
 (1468,'Blackrock Spire - Searing Gorge Instance (Inside)',229,78.5083,-225.044,49.839,5.1),
-(1470,'Blackrock Spire - Searing Gorge Instance',0,-7524.19,-1230.13,285.743,2.09544),
+(1470,'Blackrock Spire Entrance',0,-7524.7,-1228.41,287.204,1.74533),
 (1472,'Blackrock Dephts - Searing Gorge Instance',0,-7179.63,-923.667,166.416,1.84097),
+(2068,'Blackrock Spire - Jump Exit',0,-7558.39,-1309.43,248.454,1.5708),
 (2166,'Deeprun Tram - Ironforge Instance (Inside)',0,-4838.95,-1318.46,501.868,1.42372),
 (2171,'Deeprun Tram - Stormwind Instance (Inside)',0,-8364.57,535.981,91.7969,2.24619),
 (2173,'Deeprun Tram - Stormwind Instance',369,68.3006,2490.91,-4.29647,3.12192),
@@ -97,29 +114,29 @@ INSERT INTO `areatrigger_teleport` VALUES
 (2606,'Alterac Valley - Horde Exit',0,534.868,-1087.68,106.119,3.35758),
 (2608,'Alterac Valley - Alliance Exit',0,98.432,-182.274,127.52,5.02654),
 (2848,'Onyxia\'s Lair Entrance',249,29.1607,-71.3372,-8.18032,4.58),
-(2886,'The Molten Bridge',409,1096,-467,-104.6,3.64),
-(2890,'Molten Core Entrance, Inside',230,1115.35,-457.35,-102.7,0.5),
-(3126,'Maraudon',1,-1186.98,2875.95,85.7258,1.78443),
-(3131,'Maraudon',1,-1471.07,2618.57,76.1944,0),
-(3133,'Maraudon',349,1019.69,-458.31,-43.43,0.31),
-(3134,'Maraudon',349,752.91,-616.53,-33.11,1.37),
-(3183,'Dire Maul',429,44.4499,-154.822,-2.71201,0),
-(3184,'Dire Maul',429,-201.11,-328.66,-2.72,5.22),
-(3185,'Dire Maul',429,9.31119,-837.085,-32.5305,0),
-(3186,'Dire Maul',429,-62.9658,159.867,-3.46206,3.14788),
-(3187,'Dire Maul',429,31.5609,159.45,-3.4777,0.01),
-(3189,'Dire Maul',429,255.249,-16.0561,-2.58737,4.7),
-(3190,'Dire Maul',1,-3831.79,1250.23,160.223,0),
-(3191,'Dire Maul',1,-3747.96,1249.18,160.217,3.15827),
-(3193,'Dire Maul',1,-3520.65,1077.72,161.138,1.5009),
-(3194,'Dire Maul',1,-3737.48,934.975,160.973,3.13864),
-(3195,'Dire Maul',1,-3980.58,776.193,161.006,0),
-(3196,'Dire Maul',1,-4030.21,127.966,26.8109,0),
-(3197,'Dire Maul',1,-3577.67,841.859,134.594,0),
-(3528,'The Molten Core Window Entrance',409,1096,-467,-104.6,3.64),
-(3529,'The Molten Core Window(Lava) Entrance',409,1096,-467,-104.6,3.64),
+(2886,'The Molten Bridge',409,1091.89,-466.985,-105.084,3.14159),
+(2890,'The Molten Core, Exit (from inside of the Instance)',0,-7508.32,-1039.74,180.912,3.83972),
+(3126,'Maraudon, The Wicked Grotto [Purple Wing] (Exit)',1,-1186.98,2875.95,85.7258,1.78443),
+(3131,'Maraudon, Foulspore Cavern [Orange Wing] (Exit)',1,-1471.07,2618.57,76.1944,0),
+(3133,'Maraudon, Foulspore Cavern [Orange Wing] (Entrance)',349,1019.69,-458.31,-43.43,0.31),
+(3134,'Maraudon, The Wicked Grotto [Purple Wing] (Entrance)',349,752.91,-616.53,-33.11,1.37),
+(3183,'Dire Maul, East Wing [West] (Entrance)',429,44.4499,-154.822,-2.71201,0),
+(3184,'Dire Maul, East Wing [South] (Entrance)',429,-201.11,-328.66,-2.72,5.22),
+(3185,'Dire Maul, East Wing [East] (Entrance)',429,9.31119,-837.085,-32.5305,0),
+(3186,'Dire Maul, West Wing [South] (Entrance)',429,-62.9658,159.867,-3.46206,3.14788),
+(3187,'Dire Maul, West Wing [North] (Entrance)',429,31.5609,159.45,-3.4777,0.01),
+(3189,'Dire Maul, North Wing (Entrance)',429,255.249,-16.0561,-2.58737,4.7),
+(3190,'Dire Maul, West Wing [South] (Exit)',1,-3831.79,1250.23,160.223,0),
+(3191,'Dire Maul, West Wing [North](Exit)',1,-3747.96,1249.18,160.217,3.15827),
+(3193,'Dire Maul, North Wing (Exit)',1,-3520.65,1077.72,161.138,1.5009),
+(3194,'Dire Maul, East Wing [West] (Exit)',1,-3737.48,934.975,160.973,3.13864),
+(3195,'Dire Maul, East Wing [South] (Exit)',1,-3980.58,776.193,161.006,0),
+(3196,'Dire Maul, East Wing [East] (Exit)',1,-4030.21,127.966,26.8109,0),
+(3197,'Dire Maul, Alzzin the Wildshaper\'s broken wall [1-Way] (Exit)',1,-3577.67,841.859,134.594,0),
+(3528,'The Molten Core Window Entrance',409,1091.89,-466.985,-105.084,3.14159),
+(3529,'The Molten Core Window(Lava) Entrance',409,1091.89,-466.985,-105.084,3.14159),
 (3726,'Blackwing Lair - Blackrock Mountain - Eastern Kingdoms',469,-7673.03,-1106.08,396.651,0.703353),
-(3728,'Blackrock Spire, Unknown',229,174.74,-474.77,116.84,3.2),
+(3728,'Blackrock Spire, Exit (from inside of Blackwing Lair Instance)',229,174.74,-474.77,116.84,3.2),
 (3928,'Zul\'Gurub Entrance ',309,-11916.1,-1230.53,92.5334,4.71867),
 (3930,'Zul\'Gurub Exit ',0,-11916.3,-1208.37,92.2868,1.61792),
 (3948,'Arathi Basin Alliance Out',0,-1198,-2533,22,0),
@@ -137,14 +154,11 @@ INSERT INTO `areatrigger_teleport` VALUES
 (4151,'The Shattered Halls (Entrance)',540,-40.8716,-19.7538,-13.8065,1.11133),
 (4152,'The Blood Furnace (Entrance)',542,-3.9967,14.6363,-44.8009,4.88748),
 (4153,'Magtheridon\'s Lair (Entrance)',544,187.843,35.9232,67.9252,4.79879),
-(4156,'Naxxramas (to frostwyrm lair)',533,3500.87,-5339.03,145,1.34),
-(4233,'Eversong Woods - Duskwither UP Target',530,9331.49,-7812.27,136.569,5.23599),
-(4267,'Eversong Woods - Duskwither DOWN Target',530,9334.03,-7880.02,74.9095,2.35619),
 (4297,'Hellfire Ramparts (Exit)',530,-360.671,3071.9,-15.0977,5.14274),
 (4304,'Hellfire Ramparts - Omor Exit Target',530,-233.33,3199.71,-50,0.785398),
-(4311,'Battle Of Mount Hyjal, Alliance Base (Entrance)',534,4954,-1886.2,1326,0.13),
-(4312,'Battle Of Mount Hyjal, Horde Base (Entrance)',534,5497.33,-2971.14,1537.63,2.832),
-(4313,'Battle Of Mount Hyjal, Night Elf Base (Entrance)',534,5152.33,-3364.4,1644.74,6.2),
+(4311,'Battle Of Mount Hyjal, Alliance Base (Entrance)',534,5066.79,-1791.9,1321.65,2.35619),
+(4312,'Battle Of Mount Hyjal, Horde Base (Entrance)',534,5499.96,-2756.8,1488.96,1.39626),
+(4313,'Battle Of Mount Hyjal, Night Elf Base (Entrance)',534,5163.02,-3428.31,1627.61,0.785398),
 (4319,'Caverns Of Time, Battle Of Mount Hyjal (Entrance) ',534,4259.61,-4233.77,868.199,2.53),
 (4320,'Caverns Of Time, Black Morass (Entrance)',269,-1496.24,7034.7,32.5619,1.75699),
 (4321,'Caverns Of Time, Old Hillsbrad Foothills (Entrance)',560,2741.87,1315.25,14.0423,2.96016),
@@ -229,6 +243,7 @@ INSERT INTO `areatrigger_teleport` VALUES
 (5012,'Ulduar, Halls of Stone (exit)',571,8921.93,-970.399,1039.2,4.726),
 (5051,'Zul\'drak - Voltarus, base floor -> middle',571,6159.16,-2028.6,408.168,3.74088),
 (5061,'Zul\'drak - Voltarus, middle floor -> base',571,6175.6,-2008.78,245.255,1.49857),
+(5079,'Zul\'drak - Voltarus, middle floor -> top',571,6242.67,-1972.1,484.783,0.6),
 (5080,'Zul\'drak - Voltarus, upper floor -> middle',571,6159.16,-2028.6,408.168,3.74088),
 (5091,'Ulduar, Halls of Lightning (exit)',571,9182.91,-1384.73,1110.21,2.431),
 (5093,'Ulduar, Halls of Lightning (entrance)',602,1331.47,259.619,53.398,4.772),
@@ -250,14 +265,14 @@ INSERT INTO `areatrigger_teleport` VALUES
 (5148,'CoT Stratholme - Exit Target',1,-8756.6,-4457.02,-200.481,1.39626),
 (5150,'Culling of Stratholme (entrance)',595,1431.1,556.92,36.69,5.16),
 (5181,'Culling of Stratholme (exit 2)',1,-8756.87,-4459.29,-200.73,1.32),
-(5191,'Naxxramas (entrance1)',533,3005.68,-3447.77,293.93,4.65),
-(5192,'Naxxramas (entrance2)',533,3019.34,-3434.36,293.99,6.27),
-(5193,'Naxxramas (entrance3)',533,3005.9,-3420.58,294.11,1.58),
-(5194,'Naxxramas (entrance4)',533,2992.5,-3434.42,293.94,3.13),
-(5196,'Naxxramas (exit1)',571,3679.25,-1278.58,243.55,2.39),
-(5197,'Naxxramas (exit2)',571,3679.03,-1259.68,243.55,3.98),
-(5198,'Naxxramas (exit3)',571,3661.14,-1279.55,243.55,0.82),
-(5199,'Naxxramas (exit4)',571,3660.01,-1260.99,243.55,5.51),
+(5191,'Naxxramas, East (Entrance)',533,3005.68,-3447.77,293.93,4.65),
+(5192,'Naxxramas, North (Entrance)',533,3019.34,-3434.36,293.99,6.27),
+(5193,'Naxxramas, West (Entrance)',533,3005.9,-3420.58,294.11,1.58),
+(5194,'Naxxramas, South (Entrance)',533,2992.5,-3434.42,293.94,3.13),
+(5196,'Naxxramas, North-East (Exit)',571,3679.25,-1278.58,243.55,2.39),
+(5197,'Naxxramas, North-West (Exit)',571,3679.03,-1259.68,243.55,3.98),
+(5198,'Naxxramas, South-East (Exit)',571,3661.14,-1279.55,243.55,0.82),
+(5199,'Naxxramas, South-West (Exit)',571,3660.01,-1260.99,243.55,5.51),
 (5205,'Gundrak (entrance south)',604,1891.84,832.169,176.669,2.109),
 (5206,'Gundrak (entrance north)',604,1894.58,652.713,176.666,4.078),
 (5209,'Violet Hold (entrance)',608,1808.82,803.93,44.364,6.282),
@@ -281,6 +296,7 @@ INSERT INTO `areatrigger_teleport` VALUES
 (5329,'Arena - Dalaran Arena - Teleport Target',617,1291.57,792.965,8.11463,0),
 (5330,'Arena - Dalaran Arena - Teleport Target',617,1291.57,792.965,8.11463,0),
 (5331,'Arena - Dalaran Arena - Teleport Target',617,1291.57,792.965,8.11463,0),
+(5338,'Naxxanar Top -> Down',571,3733.68,3563.25,290.812,3.66519),
 (5379,'Ulduar Raid entrance',603,-914.041,-148.98,463.137,6.28),
 (5381,'Ulduar Raid exit',571,9345.56,-1114.88,1245.09,3.11),
 (5447,'Arena - Orgrimmar - Teleport Target 3',618,763.365,-284.29,28.2767,0),
@@ -302,10 +318,13 @@ INSERT INTO `areatrigger_teleport` VALUES
 (5872,'The Ruby Sanctum (Exit)',571,3604.23,192.083,-110.821,2.195);
 /*!40000 ALTER TABLE `areatrigger_teleport` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:39:30

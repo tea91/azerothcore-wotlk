@@ -1,25 +1,41 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `player_factionchange_items`
+--
+
 DROP TABLE IF EXISTS `player_factionchange_items`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `player_factionchange_items` 
-(
-  `alliance_id` int(10) unsigned NOT NULL,
-  `alliance_comment` text NOT NULL,
-  `horde_id` int(10) unsigned NOT NULL,
-  `horde_comment` text NOT NULL,
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `player_factionchange_items` (
+  `alliance_id` int unsigned NOT NULL,
+  `alliance_comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `horde_id` int unsigned NOT NULL,
+  `horde_comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`alliance_id`,`horde_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `player_factionchange_items`
+--
 
 LOCK TABLES `player_factionchange_items` WRITE;
 /*!40000 ALTER TABLE `player_factionchange_items` DISABLE KEYS */;
-INSERT INTO `player_factionchange_items` VALUES 
+INSERT INTO `player_factionchange_items` VALUES
 (1201,'Dull Heater Shield',2376,'Worn Heater Shield'),
 (1307,'Gold Pickup Schedule',45978,'Solid Gold Coin'),
 (1962,'Glowing Shadowhide Pendant',45978,'Solid Gold Coin'),
@@ -62,6 +78,36 @@ INSERT INTO `player_factionchange_items` VALUES
 (15196,'Private\'s Tabard',15197,'Scout\'s Tabard'),
 (15198,'Knight\'s Colors',15199,'Stone Guard\'s Herald'),
 (16342,'Sergeant\'s Cape',18461,'Sergeant\'s Cloak'),
+(16369,'Knight-Lieutenant\'s Silk Boots',16485,'Blood Guard\'s Silk Footwraps'),
+(16391,'Knight-Lieutenant\'s Silk Gloves',16487,'Blood Guard\'s Silk Gloves'),
+(16392,'Knight-Lieutenant\'s Leather Boots',16498,'Blood Guard\'s Leather Treads'),
+(16393,'Knight-Lieutenant\'s Dragonhide Footwraps',16494,'Blood Guard\'s Dragonhide Boots'),
+(16396,'Knight-Lieutenant\'s Leather Gauntlets',16499,'Blood Guard\'s Leather Vices'),
+(16397,'Knight-Lieutenant\'s Dragonhide Gloves',16496,'Blood Guard\'s Dragonhide Gauntlets'),
+(16401,'Knight-Lieutenant\'s Chain Boots',16531,'Blood Guard\'s Chain Boots'),
+(16403,'Knight-Lieutenant\'s Chain Gauntlets',16530,'Blood Guard\'s Chain Gauntlets'),
+(16405,'Knight-Lieutenant\'s Plate Boots',16509,'Blood Guard\'s Plate Boots'),
+(16406,'Knight-Lieutenant\'s Plate Gauntlets',16510,'Blood Guard\'s Plate Gloves'),
+(16413,'Knight-Captain\'s Silk Raiment',16491,'Legionnaire\'s Silk Robes'),
+(16414,'Knight-Captain\'s Silk Leggings',16490,'Legionnaire\'s Silk Pants'),
+(16415,'Lieutenant Commander\'s Silk Spaulders',16492,'Champion\'s Silk Shoulderpads'),
+(16416,'Lieutenant Commander\'s Crown',16489,'Champion\'s Silk Hood'),
+(16417,'Knight-Captain\'s Leather Armor',16505,'Legionnaire\'s Leather Hauberk'),
+(16418,'Lieutenant Commander\'s Leather Veil',16506,'Champion\'s Leather Headguard'),
+(16419,'Knight-Captain\'s Leather Legguards',16508,'Legionnaire\'s Leather Leggings'),
+(16420,'Lieutenant Commander\'s Leather Spaulders',16507,'Champion\'s Leather Mantle'),
+(16421,'Knight-Captain\'s Dragonhide Tunic',16504,'Legionnaire\'s Dragonhide Breastplate'),
+(16422,'Knight-Captain\'s Dragonhide Leggings',16502,'Legionnaire\'s Dragonhide Trousers'),
+(16423,'Lieutenant Commander\'s Dragonhide Epaulets',16501,'Champion\'s Dragonhide Spaulders'),
+(16424,'Lieutenant Commander\'s Dragonhide Shroud',16503,'Champion\'s Dragonhide Helm'),
+(16425,'Knight-Captain\'s Chain Hauberk',16525,'Legionnaire\'s Chain Breastplate'),
+(16426,'Knight-Captain\'s Chain Leggings',16527,'Legionnaire\'s Chain Leggings'),
+(16427,'Lieutenant Commander\'s Chain Pauldrons',16528,'Champion\'s Chain Pauldrons'),
+(16428,'Lieutenant Commander\'s Chain Helmet',16526,'Champion\'s Chain Headguard'),
+(16429,'Lieutenant Commander\'s Plate Helm',16514,'Champion\'s Plate Headguard'),
+(16430,'Knight-Captain\'s Plate Chestguard',16513,'Legionnaire\'s Plate Armor'),
+(16431,'Knight-Captain\'s Plate Leggings',16515,'Legionnaire\'s Plate Legguards'),
+(16432,'Lieutenant Commander\'s Plate Pauldrons',16516,'Champion\'s Plate Pauldrons'),
 (16437,'Marshal\'s Silk Footwraps',16539,'General\'s Silk Boots'),
 (16440,'Marshal\'s Silk Gloves',16540,'General\'s Silk Handguards'),
 (16441,'Field Marshal\'s Coronet',16533,'Warlord\'s Silk Cowl'),
@@ -99,12 +145,24 @@ INSERT INTO `player_factionchange_items` VALUES
 (16483,'Marshal\'s Plate Boots',16545,'General\'s Plate Boots'),
 (16484,'Marshal\'s Plate Gauntlets',16548,'General\'s Plate Gauntlets'),
 (17186,'Small Targe',17185,'Round Buckler'),
+(17562,'Knight-Lieutenant\'s Dreadweave Boots',17576,'Blood Guard\'s Dreadweave Boots'),
+(17564,'Knight-Lieutenant\'s Dreadweave Gloves',17577,'Blood Guard\'s Dreadweave Gloves'),
+(17566,'Lieutenant Commander\'s Headguard',17570,'Champion\'s Dreadweave Hood'),
+(17567,'Knight-Captain\'s Dreadweave Leggings',17571,'Legionnaire\'s Dreadweave Leggings'),
+(17568,'Knight-Captain\'s Dreadweave Robe',17572,'Legionnaire\'s Dreadweave Robe'),
+(17569,'Lieutenant Commander\'s Dreadweave Mantle',17573,'Champion\'s Dreadweave Shoulders'),
 (17578,'Field Marshal\'s Coronal',17591,'Warlord\'s Dreadweave Hood'),
 (17579,'Marshal\'s Dreadweave Leggings',17593,'General\'s Dreadweave Pants'),
 (17580,'Field Marshal\'s Dreadweave Shoulders',17590,'Warlord\'s Dreadweave Mantle'),
 (17581,'Field Marshal\'s Dreadweave Robe',17592,'Warlord\'s Dreadweave Robe'),
 (17583,'Marshal\'s Dreadweave Boots',17586,'General\'s Dreadweave Boots'),
 (17584,'Marshal\'s Dreadweave Gloves',17588,'General\'s Dreadweave Gloves'),
+(17594,'Knight-Lieutenant\'s Satin Boots',17616,'Blood Guard\'s Satin Boots'),
+(17596,'Knight-Lieutenant\'s Satin Gloves',17617,'Blood Guard\'s Satin Gloves'),
+(17598,'Lieutenant Commander\'s Diadem',17610,'Champion\'s Satin Cowl'),
+(17599,'Knight-Captain\'s Satin Leggings',17611,'Legionnaire\'s Satin Trousers'),
+(17600,'Knight-Captain\'s Satin Robes',17612,'Legionnaire\'s Satin Vestments'),
+(17601,'Lieutenant Commander\'s Satin Amice',17613,'Champion\'s Satin Shoulderpads'),
 (17602,'Field Marshal\'s Headdress',17623,'Warlord\'s Satin Cowl'),
 (17603,'Marshal\'s Satin Pants',17625,'General\'s Satin Leggings'),
 (17604,'Field Marshal\'s Satin Mantle',17622,'Warlord\'s Satin Mantle'),
@@ -407,8 +465,8 @@ INSERT INTO `player_factionchange_items` VALUES
 (28237,'Medallion of the Alliance(115)',28243,'Medallion of the Horde(115)'),
 (28238,'Medallion of the Alliance(115)',28239,'Medallion of the Horde(115)'),
 (28361,'Delicate Blood Garnet',28360,'Mighty Blood Garnet'),
-(28379,'Sergeant\'s Heavy Cape',28377,'Sergeant\'s Heavy Cloak'),
-(28380,'Sergeant\'s Heavy Cloak',28378,'Sergeant\'s Heavy Cape'),
+(28379,'Sergeant\'s Heavy Cape',28378,'Sergeant\'s Heavy Cape'),
+(28380,'Sergeant\'s Heavy Cloak',28377,'Sergeant\'s Heavy Cloak'),
 (28481,'Brown Elekk',29221,'Black Hawkstrider'),
 (28613,'Grand Marshal\'s Chain Armor',28805,'High Warlord\'s Chain Armor'),
 (28614,'Grand Marshal\'s Chain Gauntlets',28806,'High Warlord\'s Chain Gauntlets'),
@@ -854,12 +912,12 @@ INSERT INTO `player_factionchange_items` VALUES
 (47193,'Misery\'s End(245)',47322,'Suffering\'s End(245)'),
 (47194,'Footpads of the Icy Floe(245)',47321,'Boots of the Icy Floe(245)'),
 (47195,'Belt of the Forgotten Martyr(245)',47323,'Girdle of the Forgotten Martyr(245)'),
-(47203,'Armbands of the Ashen Saint(245)',47324,'Bindings of the Ashen Saint(245)'),
+(47203,'Armbands of the Ashen SaINT',47324,'Bindings of the Ashen SaINT'),
 (47204,'Chestguard of Flowing Elements(245)',47325,'Cuirass of Flowing Elements(245)'),
 (47205,'Footpads of the Icy Floe(258)',47482,'Boots of the Icy Floe(258)'),
 (47206,'Misery\'s End(258)',47483,'Suffering\'s End(258)'),
 (47207,'Belt of the Forgotten Martyr(258)',47484,'Girdle of the Forgotten Martyr(258)'),
-(47208,'Armbands of the Ashen Saint(258)',47485,'Bindings of the Ashen Saint(258)'),
+(47208,'Armbands of the Ashen SaINT',47485,'Bindings of the Ashen SaINT'),
 (47209,'Chestguard of Flowing Elements(258)',47486,'Cuirass of Flowing Elements(258)'),
 (47223,'Ring of the Darkmender(245)',47278,'Circle of the Darkmender(245)'),
 (47224,'Ring of the Darkmender(258)',47439,'Circle of the Darkmender(258)'),
@@ -1375,10 +1433,13 @@ INSERT INTO `player_factionchange_items` VALUES
 (54651,'Gnomeregan Pride',54653,'Darkspear Pride');
 /*!40000 ALTER TABLE `player_factionchange_items` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:18

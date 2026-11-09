@@ -1,44 +1,61 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `vehicle_template_accessory`
+--
+
 DROP TABLE IF EXISTS `vehicle_template_accessory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `vehicle_template_accessory` 
-(
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `accessory_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `seat_id` tinyint(4) NOT NULL DEFAULT '0',
-  `minion` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `description` text NOT NULL,
-  `summontype` tinyint(3) unsigned NOT NULL DEFAULT '6' COMMENT 'see enum TempSummonType',
-  `summontimer` int(10) unsigned NOT NULL DEFAULT '30000' COMMENT 'timer, only relevant for certain summontypes',
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `vehicle_template_accessory` (
+  `entry` int unsigned NOT NULL DEFAULT '0',
+  `accessory_entry` int unsigned NOT NULL DEFAULT '0',
+  `seat_id` tinyint NOT NULL DEFAULT '0',
+  `minion` tinyint unsigned NOT NULL DEFAULT '0',
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `summontype` tinyint unsigned NOT NULL DEFAULT '6' COMMENT 'see enum TempSummonType',
+  `summontimer` int unsigned NOT NULL DEFAULT '30000' COMMENT 'timer, only relevant for certain summontypes',
   PRIMARY KEY (`entry`,`seat_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `vehicle_template_accessory`
+--
 
 LOCK TABLES `vehicle_template_accessory` WRITE;
 /*!40000 ALTER TABLE `vehicle_template_accessory` DISABLE KEYS */;
-INSERT INTO `vehicle_template_accessory` VALUES 
-(24083,24082,0,0,'Proto-Drake Handler',6,120000),
+INSERT INTO `vehicle_template_accessory` VALUES
 (24750,24751,0,1,'Excelsior rides Hidalgo the Master Falconer',6,30000),
-(25762,25760,0,1,'Kvaldir Raider',8,0),
-(25762,25760,1,1,'Kvaldir Raider',8,0),
-(25762,25760,2,1,'Kvaldir Raider',8,0),
-(25762,25760,3,1,'Kvaldir Raider',8,0),
-(25762,25760,4,1,'Kvaldir Raider',8,0),
-(25762,25760,5,1,'Kvaldir Raider',8,0),
-(25762,25760,6,1,'Kvaldir Raider',8,0),
+(25762,25760,0,0,'Kvaldir Raider',8,0),
+(25762,25760,1,0,'Kvaldir Raider',8,0),
+(25762,25760,2,0,'Kvaldir Raider',8,0),
+(25762,25760,3,0,'Kvaldir Raider',8,0),
+(25762,25760,4,0,'Kvaldir Raider',8,0),
+(25762,25760,5,0,'Kvaldir Raider',8,0),
+(25762,25760,6,0,'Kvaldir Raider',8,0),
 (25968,25801,0,0,'Nedar, Lord of Rhinos',6,30000),
+(27213,27206,0,0,'Onslaught Warhorse - Onslaught Knight',8,30000),
 (27241,27268,0,0,'Risen Gryphon',6,30000),
 (27587,27163,1,1,'7th Legion Siege Engineer Rides Alliance Steam Tank',5,0),
 (27587,27588,2,1,'7th Legion Elite Rides Alliance Steam Tank',5,0),
 (27587,27588,3,1,'7th Legion Elite Rides Alliance Steam Tank',5,0),
 (27626,27627,0,0,'Tatjana\'s Horse',8,30000),
 (27661,27662,0,0,'Wintergarde Gryphon',6,30000),
+(27886,27887,0,1,'Valgarde Gryphon',5,0),
 (27939,32576,0,0,'Orabus the Helmsman',8,0),
 (27939,32577,1,0,'Kvaldir Crewman',8,0),
 (27939,32578,2,0,'Kvaldir Crewman',8,0),
@@ -46,11 +63,13 @@ INSERT INTO `vehicle_template_accessory` VALUES
 (27939,32580,4,0,'Kvaldir Crewman',8,0),
 (28018,28006,0,0,'Thiassi the Light Bringer',8,0),
 (28054,28053,-1,0,'Lucky Wilhelm - Apple',6,10000),
+(28061,28065,0,1,'Wintergarde Gryphon - Wintergarde Gryphon Rider',8,0),
 (28312,28319,7,1,'Wintergrasp Siege Engine',6,30000),
+(28399,28105,0,0,'Zeptek the Destroyer',7,0),
 (28468,28451,1,1,'Stampy',8,0),
 (28614,28616,0,1,'Scarlet Gryphon Rider',6,30000),
 (28669,28717,1,1,'Flying Fiend',8,0),
-(28710,28646,0,1,'Pilot Vic',7,0),
+(28710,28646,0,1,'Vics Flying Machine',6,30000),
 (28782,28768,0,0,'Acherus Deathcharger',6,30000),
 (29351,29558,0,1,'Niffelem Frost Giant',8,30000),
 (29351,29558,1,1,'Niffelem Frost Giant',8,30000),
@@ -65,11 +84,12 @@ INSERT INTO `vehicle_template_accessory` VALUES
 (29625,29694,1,1,'Hyldsmeet Proto-Drake',6,30000),
 (29698,29699,0,0,'Drakuru Raptor',6,30000),
 (29708,29805,0,1,'Captive Proto-Drake',8,0),
+(29736,30401,0,1,'Stormcrest Eagle (Scripted)',8,0),
 (29838,29836,0,0,'Drakkari Battle Rider on Drakkari Rhino, not minion',6,30000),
 (29863,28518,0,1,'Persistence',8,0),
-(29931,29982,0,0,'Drakkari Rider on Drakkari Rhino',6,300),
-(29931,29982,1,0,'Drakkari Rider on Drakkari Rhino',6,300),
-(29931,29982,2,0,'Drakkari Rider on Drakkari Rhino',6,300),
+(29931,29982,0,0,'Drakkari Raider',7,0),
+(29931,29982,1,0,'Drakkari Raider',7,0),
+(29931,29982,2,0,'Drakkari Raider',7,0),
 (30013,29730,0,0,'Frostborn Stormrider',6,30000),
 (30134,30107,0,1,'Brann Bronzebeard',8,0),
 (30174,30175,0,1,'Hyldsmeet Bear Rider',8,0),
@@ -96,14 +116,14 @@ INSERT INTO `vehicle_template_accessory` VALUES
 (31838,32256,6,1,'Shield Visual Loc Bunny on Horde Infra-green Bomber',8,0),
 (31838,32317,7,1,'Horde Bomber Pilot rides Horde Infra-green Bomber',8,0),
 (31881,31891,0,1,'Kor\'kron Transport Pilot rides Kor\'kron Troop Transport',6,300),
-(31881,31884,1,1,'Kor\'kron Suppression Turret on Kor\'kron Troop Transport',8,0),
+(31881,31884,1,1,'Kor\'kron Suppression Turret on Kor\'kron Troop Transport',5,0),
 (31881,31882,2,0,'Kor\'kron Infiltrator on Kor\'kron Troop Transport',6,300),
 (31881,31882,3,0,'Kor\'kron Infiltrator on Kor\'kron Troop Transport',6,300),
 (31881,31882,4,0,'Kor\'kron Infiltrator on Kor\'kron Troop Transport',6,300),
 (31881,31882,5,0,'Kor\'kron Infiltrator on Kor\'kron Troop Transport',6,300),
 (32189,32190,0,1,'Skybreaker Recon Fighter',6,30000),
 (32225,32223,0,1,'Skybreaker Transport Pilot rides Skybreaker Troop Transport',6,300),
-(32225,32227,1,1,'Skybreaker Suppression Turret on Skybreaker Troop Transport',8,0),
+(32225,32227,1,1,'Skybreaker Suppression Turret on Skybreaker Troop Transport',5,0),
 (32225,32222,2,0,'Skybreaker Infiltrator on Skybreaker Troop Transport',6,300),
 (32225,32222,3,0,'Skybreaker Infiltrator on Skybreaker Troop Transport',6,300),
 (32225,32222,4,0,'Skybreaker Infiltrator on Skybreaker Troop Transport',6,300),
@@ -128,10 +148,10 @@ INSERT INTO `vehicle_template_accessory` VALUES
 (32513,32256,6,1,'Shield Visual Loc Bunny on Horde Infra-green Bomber',8,0),
 (32513,32317,7,1,'Horde Bomber Pilot rides Horde Infra-green Bomber',8,0),
 (32627,32629,7,1,'Wintergrasp Siege Engine',6,30000),
-(32633,32638,1,1,'Traveler Mammoth (A) - Vendor',6,30000),
-(32633,32639,2,1,'Traveler Mammoth (A) - Vendor & Repairer',6,30000),
-(32640,32642,1,1,'Traveler Mammoth (H) - Vendor',6,30000),
-(32640,32641,2,1,'Traveler Mammoth (H) - Vendor & Repairer',6,30000),
+(32633,32638,1,0,'Traveler Mammoth (A) - Vendor',6,30000),
+(32633,32639,2,0,'Traveler Mammoth (A) - Vendor & Repairer',6,30000),
+(32640,32642,1,0,'Traveler Mammoth (H) - Vendor',6,30000),
+(32640,32641,2,0,'Traveler Mammoth (H) - Vendor & Repairer',6,30000),
 (32823,34812,0,1,'Bountiful Table - The Turkey Chair',8,0),
 (32823,34823,1,1,'Bountiful Table - The Cranberry Chair',8,0),
 (32823,34819,2,1,'Bountiful Table - The Stuffing Chair',8,0),
@@ -217,10 +237,13 @@ INSERT INTO `vehicle_template_accessory` VALUES
 (40472,40469,3,1,'Orb Carrier',6,30000);
 /*!40000 ALTER TABLE `vehicle_template_accessory` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:49

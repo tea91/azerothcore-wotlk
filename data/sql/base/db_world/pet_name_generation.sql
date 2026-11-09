@@ -1,25 +1,41 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `pet_name_generation`
+--
+
 DROP TABLE IF EXISTS `pet_name_generation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pet_name_generation` 
-(
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `word` tinytext NOT NULL,
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `half` tinyint(3) unsigned NOT NULL DEFAULT '0',
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pet_name_generation` (
+  `id` int unsigned NOT NULL,
+  `word` tinytext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `entry` int unsigned NOT NULL DEFAULT '0',
+  `half` tinyint unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=314 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pet_name_generation`
+--
 
 LOCK TABLES `pet_name_generation` WRITE;
 /*!40000 ALTER TABLE `pet_name_generation` DISABLE KEYS */;
-INSERT INTO `pet_name_generation` VALUES 
+INSERT INTO `pet_name_generation` VALUES
 (1,'Aba',416,0),
 (2,'Az',416,0),
 (3,'Bel',416,0),
@@ -280,7 +296,6 @@ INSERT INTO `pet_name_generation` VALUES
 (258,'roon',17252,1),
 (259,'thun',17252,1),
 (260,'tom',17252,1),
-(261,'Stone',26125,0),
 (262,'Stone',26125,0),
 (263,'Eye',26125,0),
 (264,'Dirt',26125,0),
@@ -327,7 +342,7 @@ INSERT INTO `pet_name_generation` VALUES
 (305,'chomp',26125,1),
 (306,'breaker',26125,1),
 (307,'keeper',26125,1),
-(308,'rawler',26125,1),
+(308,'crawler',26125,1),
 (309,'stealer',26125,1),
 (310,'thief',26125,1),
 (311,'catcher',26125,1),
@@ -335,10 +350,13 @@ INSERT INTO `pet_name_generation` VALUES
 (313,'slicer',26125,1);
 /*!40000 ALTER TABLE `pet_name_generation` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:17

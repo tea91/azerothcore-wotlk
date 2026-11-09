@@ -1,36 +1,54 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `instance_template`
+--
+
 DROP TABLE IF EXISTS `instance_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `instance_template` 
-(
-  `map` smallint(5) unsigned NOT NULL,
-  `parent` smallint(5) unsigned NOT NULL,
-  `script` varchar(128) NOT NULL DEFAULT '',
-  `allowMount` tinyint(3) unsigned NOT NULL DEFAULT '0',
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `instance_template` (
+  `map` smallint unsigned NOT NULL,
+  `parent` smallint unsigned NOT NULL,
+  `script` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `allowMount` tinyint unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`map`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `instance_template`
+--
 
 LOCK TABLES `instance_template` WRITE;
 /*!40000 ALTER TABLE `instance_template` DISABLE KEYS */;
-INSERT INTO `instance_template` VALUES 
+INSERT INTO `instance_template` VALUES
 (30,0,'',1),
 (33,0,'instance_shadowfang_keep',0),
 (34,0,'instance_the_stockade',0),
 (36,0,'instance_deadmines',0),
 (43,1,'instance_wailing_caverns',0),
+(44,0,'',0),
 (47,1,'instance_razorfen_kraul',0),
 (48,1,'instance_blackfathom_deeps',0),
 (70,0,'instance_uldaman',0),
 (90,0,'instance_gnomeregan',0),
 (109,0,'instance_sunken_temple',0),
 (129,1,'instance_razorfen_downs',0),
+(169,0,'',1),
 (189,0,'instance_scarlet_monastery',0),
 (209,1,'instance_zulfarrak',1),
 (229,0,'instance_blackrock_spire',0),
@@ -54,11 +72,11 @@ INSERT INTO `instance_template` VALUES
 (534,1,'instance_hyjal',1),
 (540,530,'instance_shattered_halls',0),
 (542,530,'instance_blood_furnace',0),
-(543,530,'instance_ramparts',0),
+(543,530,'instance_hellfire_ramparts',0),
 (544,530,'instance_magtheridons_lair',0),
 (545,530,'instance_steam_vault',0),
-(546,530,'',0),
-(547,530,'',0),
+(546,530,'instance_the_underbog',0),
+(547,530,'instance_the_slave_pens',0),
 (548,530,'instance_serpent_shrine',0),
 (550,530,'instance_the_eye',0),
 (552,530,'instance_arcatraz',0),
@@ -66,8 +84,8 @@ INSERT INTO `instance_template` VALUES
 (554,530,'instance_mechanar',0),
 (555,530,'instance_shadow_labyrinth',0),
 (556,530,'instance_sethekk_halls',0),
-(557,530,'',0),
-(558,530,'',0),
+(557,530,'instance_mana_tombs',0),
+(558,530,'instance_auchenai_crypts',0),
 (559,0,'',1),
 (560,1,'instance_old_hillsbrad',1),
 (562,0,'',1),
@@ -77,7 +95,7 @@ INSERT INTO `instance_template` VALUES
 (568,530,'instance_zulaman',1),
 (572,0,'',1),
 (574,571,'instance_utgarde_keep',1),
-(575,571,'instance_pinnacle',0),
+(575,571,'instance_utgarde_pinnacle',0),
 (576,571,'instance_nexus',0),
 (578,571,'instance_oculus',1),
 (580,530,'instance_sunwell_plateau',1),
@@ -105,10 +123,13 @@ INSERT INTO `instance_template` VALUES
 (724,0,'instance_ruby_sanctum',1);
 /*!40000 ALTER TABLE `instance_template` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:04

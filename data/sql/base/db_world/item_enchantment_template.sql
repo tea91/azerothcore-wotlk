@@ -1,24 +1,41 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `item_enchantment_template`
+--
+
 DROP TABLE IF EXISTS `item_enchantment_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `item_enchantment_template` 
-(
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `ench` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `chance` float unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`entry`,`ench`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Item Random Enchantment System';
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `item_enchantment_template` (
+  `entry` int unsigned NOT NULL DEFAULT '0',
+  `ench` int unsigned NOT NULL DEFAULT '0',
+  `chance` float NOT NULL DEFAULT '0',
+  PRIMARY KEY (`entry`,`ench`),
+  CONSTRAINT `item_enchantment_template_chk_1` CHECK ((`chance` >= 0))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Item Random Enchantment System';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `item_enchantment_template`
+--
 
 LOCK TABLES `item_enchantment_template` WRITE;
 /*!40000 ALTER TABLE `item_enchantment_template` DISABLE KEYS */;
-INSERT INTO `item_enchantment_template` VALUES 
+INSERT INTO `item_enchantment_template` VALUES
 (61,6,7.73),
 (61,8,7.31),
 (61,9,8.02),
@@ -23090,15 +23107,10 @@ INSERT INTO `item_enchantment_template` VALUES
 (5173,18,2.21),
 (5173,22,2.93),
 (5173,24,2.82),
-(5173,29,0.1),
-(5173,33,0.1),
-(5173,91,0.1),
 (5173,93,2.21),
 (5173,96,2.93),
 (5173,97,2.82),
-(5173,197,0.1),
 (5173,228,3),
-(5173,231,0.1),
 (5173,256,3),
 (5173,501,3),
 (5173,502,3),
@@ -23114,7 +23126,6 @@ INSERT INTO `item_enchantment_template` VALUES
 (5173,840,3),
 (5173,841,3),
 (5173,842,3),
-(5173,927,0.1),
 (5173,1009,2.82),
 (5173,1010,2.82),
 (5173,1011,2.82),
@@ -23128,16 +23139,10 @@ INSERT INTO `item_enchantment_template` VALUES
 (5173,1180,2.51),
 (5173,1181,2.51),
 (5173,1182,2.51),
-(5173,1399,0.1),
 (5173,1547,0.63),
 (5173,1548,0.78),
 (5173,1549,0.78),
 (5173,1550,0.78),
-(5173,1913,0.1),
-(5173,1952,0.1),
-(5173,2067,0.03),
-(5173,2068,0.03),
-(5173,2069,0.03),
 (5174,18,3.05),
 (5174,22,3),
 (5174,24,2.9),
@@ -28627,10 +28632,13 @@ INSERT INTO `item_enchantment_template` VALUES
 (8675,2154,11.98);
 /*!40000 ALTER TABLE `item_enchantment_template` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:05

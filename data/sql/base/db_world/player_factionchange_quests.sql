@@ -1,25 +1,42 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `player_factionchange_quests`
+--
+
 DROP TABLE IF EXISTS `player_factionchange_quests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `player_factionchange_quests` 
-(
-  `alliance_id` int(10) unsigned NOT NULL,
-  `horde_id` int(10) unsigned NOT NULL,
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `player_factionchange_quests` (
+  `alliance_id` int unsigned NOT NULL,
+  `horde_id` int unsigned NOT NULL,
   PRIMARY KEY (`alliance_id`,`horde_id`),
   UNIQUE KEY `alliance_uniq` (`alliance_id`),
   UNIQUE KEY `horde_uniq` (`horde_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `player_factionchange_quests`
+--
 
 LOCK TABLES `player_factionchange_quests` WRITE;
 /*!40000 ALTER TABLE `player_factionchange_quests` DISABLE KEYS */;
-INSERT INTO `player_factionchange_quests` VALUES 
+INSERT INTO `player_factionchange_quests` VALUES
+(7065,7064),
 (7168,7163),
 (7169,7164),
 (7170,7165),
@@ -29,8 +46,43 @@ INSERT INTO `player_factionchange_quests` VALUES
 (8115,8122),
 (8311,8312),
 (8860,8861),
+(8905,8913),
+(8906,8914),
+(8907,8915),
+(8908,10493),
+(8909,8916),
+(8910,8917),
+(8911,8919),
+(8912,8920),
+(8922,8923),
+(8926,8927),
+(8929,8930),
+(8931,8938),
+(8932,8939),
+(8933,10495),
+(8934,8940),
+(8935,8941),
+(8936,8943),
+(8937,8944),
+(8951,9016),
+(8952,9017),
+(8953,9018),
+(8954,10497),
+(8955,9019),
+(8956,9020),
+(8958,9021),
+(8959,9022),
 (8960,9032),
+(8977,8978),
 (8997,8998),
+(8999,9007),
+(9000,9008),
+(9001,9014),
+(9002,10499),
+(9003,9009),
+(9004,9010),
+(9005,9012),
+(9006,9013),
 (9520,9535),
 (9522,9536),
 (9524,9525),
@@ -79,12 +131,17 @@ INSERT INTO `player_factionchange_quests` VALUES
 (10147,10133),
 (10148,10135),
 (10163,10162),
+(10382,10388),
 (10394,10390),
 (10395,10393),
 (10397,10392),
 (10443,10442),
 (10444,10448),
 (10476,10479),
+(10492,8918),
+(10494,8942),
+(10496,8957),
+(10498,9011),
 (10562,10595),
 (10563,10596),
 (10564,10598),
@@ -251,7 +308,6 @@ INSERT INTO `player_factionchange_quests` VALUES
 (14054,14060),
 (14055,14058),
 (14096,14142),
-(14111,14100),
 (20438,24556),
 (20439,24451),
 (24498,24507),
@@ -275,10 +331,13 @@ INSERT INTO `player_factionchange_quests` VALUES
 (25414,25293);
 /*!40000 ALTER TABLE `player_factionchange_quests` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:40:18

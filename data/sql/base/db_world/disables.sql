@@ -1,33 +1,50 @@
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+-- MySQL dump 10.13  Distrib 8.4.3, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acore_world
+-- ------------------------------------------------------
+-- Server version	8.4.3
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `disables`
+--
+
 DROP TABLE IF EXISTS `disables`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `disables` 
-(
-  `sourceType` int(10) unsigned NOT NULL,
-  `entry` int(10) unsigned NOT NULL,
-  `flags` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `params_0` varchar(255) NOT NULL DEFAULT '',
-  `params_1` varchar(255) NOT NULL DEFAULT '',
-  `comment` varchar(255) NOT NULL DEFAULT '',
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `disables` (
+  `sourceType` int unsigned NOT NULL,
+  `entry` int unsigned NOT NULL,
+  `flags` tinyint unsigned NOT NULL DEFAULT '0',
+  `params_0` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `params_1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`sourceType`,`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `disables`
+--
 
 LOCK TABLES `disables` WRITE;
 /*!40000 ALTER TABLE `disables` DISABLE KEYS */;
-INSERT INTO `disables` VALUES 
+INSERT INTO `disables` VALUES
 (0,128,8,'','','Spell for deprecated item'),
 (0,698,17,'30,489','','Disable of Ritual of Summoning on Alterac Valley and Warsong Gulch'),
 (0,758,8,'','','Spell for deprecated item 1254'),
 (0,2825,64,'','','Ignore LOS for Heroism'),
 (0,7720,64,'','','Disable LOS for Ritual of Summoning'),
 (0,8146,64,'','','Disable LOS for Tremor Totem effect'),
+(0,9095,64,'','','Ignore LoS for Cantation of Manifestation'),
 (0,12354,64,'','','Disable LOS for Flame of Hakkar, Sunken Temple'),
 (0,16378,64,'','','Ignore LOS for Krakles Thermometer'),
 (0,17729,8,'','','Spell for deprecated item'),
@@ -47,9 +64,15 @@ INSERT INTO `disables` VALUES
 (0,23482,8,'','','Spell for deprecated item'),
 (0,23483,8,'','','Spell for deprecated item'),
 (0,23789,8,'','','Stoneclaw Totem TEST - can crash client by spawning too many totems'),
+(0,26522,64,'','','Disable LOS for Lunar Fortune'),
 (0,27252,8,'','','Spell for deprecated item'),
 (0,27256,8,'','','Spell for deprecated item'),
+(0,28096,64,'','','Stalagg Tesla Visual - Ignore LoS'),
+(0,28098,64,'','','Stalagg Tesla Periodic - Ignore LoS'),
+(0,28110,64,'','','Feugen Tesla Periodic - Ignore LoS'),
+(0,28111,64,'','','Feugen Tesla Visual - Ignore LoS'),
 (0,28170,8,'','','Spell for deprecated item'),
+(0,28395,64,'','','Ignore LoS for Communique Timer, Necropolis'),
 (0,29916,64,'','','Disable LOS for Quest Little Morsels (9440)'),
 (0,29917,64,'','','Disable LOS for Quest Little Morsels (9440)'),
 (0,31696,64,'','','Ignore LOS on Thane'),
@@ -72,10 +95,15 @@ INSERT INTO `disables` VALUES
 (0,39476,64,'','',''),
 (0,39953,64,'','','Disable LOS for A\'dal\'s Song of Battle'),
 (0,45323,64,'','','Ignore LOS for Returning Vrykul Artifact'),
+(0,45425,64,'','','Ignore LOS for Shoot (Dummy)'),
 (0,45669,64,'','','Disable LOS for Torch Catching quests'),
 (0,45949,64,'','','Ignore LOS on Release Aberration'),
 (0,46171,64,'','','Ignore LOS on Scuttle Wrecked Flying Machine'),
+(0,46314,64,'0','0','Disable LOS for spell Ahune - Slippery Floor Ambient'),
+(0,46422,64,'0','0','Disable LOS for spell Shamans Look for Opening'),
 (0,46585,64,'','','Disable LOS for Raise Dead Guardian'),
+(0,46593,64,'0','0','Disable LOS for spell Whisp Flight Missile and Beam'),
+(0,46603,64,'0','0','Disable LOS for spell Force Whisp to Flight'),
 (0,47117,64,'','','Ignore LOS on Script Cast Summon Image of Drakuru 01'),
 (0,47149,64,'','','Ignore LOS on Script Cast Summon Image of Drakuru 02'),
 (0,47316,64,'','','Ignore LOS on Script Cast Summon Image of Drakuru 03'),
@@ -85,6 +113,8 @@ INSERT INTO `disables` VALUES
 (0,48541,64,'','','Disable LOS for Revitalize'),
 (0,48542,64,'','','Disable LOS for Revitalize'),
 (0,48543,64,'','','Disable LOS for Revitalize'),
+(0,49308,64,'0','0','Disable LoS for spell Utgarde Pinnacle Reset Check'),
+(0,50313,64,'0','0','Disable LOS for Spell Mole Machine Emerge'),
 (0,50439,64,'','','Ignore LOS on Script Cast Summon Image of Drakuru 05'),
 (0,50563,64,'','','Ignore LOS for Carve Stone'),
 (0,52150,64,'','','Disable LOS for Raise Dead Pet'),
@@ -92,10 +122,14 @@ INSERT INTO `disables` VALUES
 (0,52228,64,'','','Disable LOS check for Kill Credit (quest 12669)'),
 (0,53038,64,'','','Disable Vmaps for Didgeridoo of Contemplation'),
 (0,53517,64,'','','Disable LOS for Roar of Recovery'),
+(0,54028,64,'','','Removed LOS for SPELL 54028'),
 (0,54114,64,'','','Disable LOS for Heart of the Phoenix'),
+(0,54612,64,'','','Chained Peasant (Chest) LOS'),
 (0,55095,64,'','','Disable LOS for Frost Fever'),
 (0,56091,64,'','','Disable LOS for EoE'),
 (0,56092,64,'','','Disable LOS for EoE'),
+(0,56711,64,'','','Disable LOS for Image Channel'),
+(0,56713,64,'','','Disable LOS for Image Channel'),
 (0,56940,64,'','','Disable LOS check for Thorim Story Kill Credit'),
 (0,57090,64,'','','Disable LOS for EoE'),
 (0,57092,64,'','','Disable LOS for EoE'),
@@ -103,6 +137,7 @@ INSERT INTO `disables` VALUES
 (0,58515,64,'','','Ignore LOS on Burn Corpse'),
 (0,58518,64,'','','Ignore LOS on Ahn kahet Brazier Kill Credit'),
 (0,58875,64,'','','Disable LOS for Spirit Walk'),
+(0,59661,64,'','','Icecrown Purple Beam (Ignore Los)'),
 (0,60535,64,'','','Windles Lighter, disable LOS'),
 (0,60946,64,'','','Disable LOS for Nightmare'),
 (0,60947,64,'','','Disable LOS for Nightmare'),
@@ -403,9 +438,13 @@ INSERT INTO `disables` VALUES
 (1,5711,0,'','','Deprecated quest: <NYI> The Lost Ways'),
 (1,5712,0,'','','Deprecated quest: <NYI> The Lost Ways'),
 (1,6003,0,'','','Deprecated quest: <nyi> <txt> Green With Envy'),
+(1,6144,0,'','','Disable Quest The Call to Command'),
+(1,6145,0,'','','Disable Quest The Crimson Courier'),
 (1,6165,0,'','','Deprecated quest: <NYI> <TXT> Archmage Timolain\'s Remains'),
 (1,6201,0,'','','Deprecated quest'),
 (1,6202,0,'','','Deprecated quest: <UNUSED> Good and Evil'),
+(1,6521,0,'0','0','Deprecated quest: An Unholy Alliance'),
+(1,6522,0,'0','0','Deprecated quest: An Unholy Alliance'),
 (1,6702,0,'','','Deprecated quest: <TXT> SF,RFK,GNOMER,BF'),
 (1,6703,0,'','','Deprecated quest: <TXT> SF,RFK,GNOMER,BF - Repeatable'),
 (1,6704,0,'','','Deprecated quest: <TXT> SM,RFD,ULD'),
@@ -443,7 +482,15 @@ INSERT INTO `disables` VALUES
 (1,8024,0,'','','Deprecated quest'),
 (1,8025,0,'','','Deprecated quest'),
 (1,8026,0,'','','Deprecated quest'),
+(1,8080,0,'','','Deprecated quest: Arathi Basin Resources!'),
+(1,8123,0,'','','Deprecated quest: Cut Arathor Supply Lines'),
 (1,8152,0,'','','Deprecated quest: REUSE'),
+(1,8154,0,'','','Deprecated quest: Arathi Basin Resources!'),
+(1,8155,0,'','','Deprecated quest: Arathi Basin Resources!'),
+(1,8156,0,'','','Deprecated quest: Arathi Basin Resources!'),
+(1,8160,0,'','','Deprecated quest: Cut Arathor Supply Lines'),
+(1,8161,0,'','','Deprecated quest: Cut Arathor Supply Lines'),
+(1,8162,0,'','','Deprecated quest: Cut Arathor Supply Lines'),
 (1,8226,0,'','','Deprecated quest'),
 (1,8230,0,'','','Deprecated quest: Collin\'s Test Quest'),
 (1,8237,0,'','','Deprecated quest: REUSE'),
@@ -453,11 +500,17 @@ INSERT INTO `disables` VALUES
 (1,8248,0,'','','Deprecated quest: <UNUSED>'),
 (1,8270,0,'','','Deprecated quest: test copy quest'),
 (1,8274,0,'','','Deprecated quest: Test Kill Quest'),
+(1,8297,0,'','','Deprecated quest: Arathi Basin Resources!'),
+(1,8299,0,'','','Deprecated quest: Cut Arathor Supply Lines'),
 (1,8337,0,'','','Deprecated quest: <UNUSED>'),
 (1,8339,0,'','','Deprecated quest: Royalty of the Council <NYI> <TXT> UNUSED'),
 (1,8340,0,'','','Deprecated quest: Twilight Signet Ring <NYI> <TXT>'),
+(1,8367,0,'','','Deprecated Quest: For Great Honor'),
+(1,8371,0,'','','Deprecated Quest: Concerted Efforts'),
 (1,8384,0,'','','Deprecated quest: Claiming Arathi Basin'),
+(1,8385,0,'','','Deprecated Quest: Concerted Efforts'),
 (1,8386,0,'','','Deprecated quest: Fight for Warsong Gulch'),
+(1,8388,0,'','','Deprecated Quest: For Great Honor'),
 (1,8389,0,'','','Deprecated quest: Battle of Warsong Gulch'),
 (1,8390,0,'','','Deprecated quest: Conquering Arathi Basin'),
 (1,8391,0,'','','Deprecated quest: Claiming Arathi Basin'),
@@ -499,6 +552,9 @@ INSERT INTO `disables` VALUES
 (1,8617,0,'','','Deprecated quest'),
 (1,8618,0,'','','Deprecated quest'),
 (1,8869,0,'','','Deprecated quest'),
+(1,8897,0,'','','Deprecated quest: Dearest Colara,'),
+(1,8898,0,'','','Deprecated quest: Dearest Colara,'),
+(1,8899,0,'','','Deprecated quest: Dearest Colara,'),
 (1,8971,0,'','','Deprecated quest: REUSE'),
 (1,8972,0,'','','Deprecated quest: REUSE'),
 (1,8973,0,'','','Deprecated quest: REUSE'),
@@ -753,38 +809,23 @@ INSERT INTO `disables` VALUES
 (1,12626,0,'','','Deprecated quest'),
 (1,12682,0,'','','Deprecated quest:Uncharted Territory (DEPRECATED)'),
 (1,12731,0,'','','Deprecated quest: '),
-(1,12752,0,'0','0','Disable quest from Scourge Invasion for undead'),
-(1,12753,0,'0','0','Disable quest from Scourge Invasion for Dwarves'),
 (1,12764,0,'','','Deprecated quest:The Secret to Kungaloosh (DEPRECATED)'),
 (1,12765,0,'','','Deprecated quest:Kungaloosh (DEPRECATED)'),
-(1,12771,0,'0','0','Disable quest from Scourge Invasion for Dwarves'),
-(1,12772,0,'0','0','Disable quest from Scourge Invasion for Night Elves'),
-(1,12773,0,'0','0','Disable quest from Scourge Invasion for Night Elves'),
-(1,12774,0,'0','0','Disable quest from Scourge Invasion for Human'),
-(1,12775,0,'0','0','Disable quest from Scourge Invasion for Human'),
-(1,12776,0,'0','0','Disable quest from Scourge Invasion for Draenei'),
-(1,12777,0,'0','0','Disable quest from Scourge Invasion for Draenei'),
-(1,12782,0,'0','0','Disable quest from Scourge Invasion for Blood Elves'),
-(1,12783,0,'0','0','Disable quest from Scourge Invasion for Orcs'),
-(1,12784,0,'0','0','Disable quest from Scourge Invasion for Tauren'),
-(1,12785,0,'0','0','Disable quest from Scourge Invasion for Trolls'),
-(1,12786,0,'0','0','Disable quest from Scourge Invasion for Tauren'),
-(1,12787,0,'0','0','Disable quest from Scourge Invasion for undead'),
-(1,12788,0,'0','0','Disable quest from Scourge Invasion for Blood Elves'),
-(1,12808,0,'0','0','Disable quest from Scourge Invasion for Gnomes'),
-(1,12809,0,'0','0','Disable quest from Scourge Invasion for Gnomes'),
-(1,12811,0,'0','0','Disable quest from Scourge Invasion for Trolls'),
-(1,12812,0,'0','0','Disable quest from Scourge Invasion for Orcs'),
 (1,12911,0,'','','Deprecated quest: Kill Credit Test'),
 (1,12923,0,'','','Deprecated quest: '),
 (1,13123,0,'','','Deprecated quest: WotLK Collector\'s Edition: - DEM - E - FLAG'),
 (1,13210,0,'','','Deprecated quest: Blizzard Account: - DEM - E - FLAG'),
 (1,13303,0,'','','Deprecated quest'),
 (1,13317,0,'','','Deprecated quest: ----'),
+(1,13381,0,'','','Deprecated Quest: Watts My Target'),
 (1,13405,0,'','','Deprecated quest: Call to Arms: Strand of the Ancients'),
 (1,13407,0,'','','Deprecated quest: Call to Arms: Strand of the Ancients'),
 (1,13427,0,'','','Deprecated quest: Call to Arms: Alterac Valley'),
 (1,13428,0,'','','Deprecated quest: Call to Arms: Alterac Valley'),
+(1,13475,0,'','','Deprecated Quest: For Great Honor'),
+(1,13476,0,'','','Deprecated Quest: For Great Honor'),
+(1,13477,0,'','','Deprecated Quest: Concerted Efforts'),
+(1,13478,0,'','','Deprecated Quest: Concerted Efforts'),
 (1,13541,0,'','','Deprecated quest: '),
 (1,13649,0,'','','Deprecated quest: Justin\'s Fun Test'),
 (1,13827,0,'','','Deprecated quest'),
@@ -823,7 +864,6 @@ INSERT INTO `disables` VALUES
 (1,24746,0,'','','Deprecated quest'),
 (1,24797,0,'','','Deprecated quest: REUSE'),
 (1,25485,0,'','','Deprecated quest'),
-(2,532,1,'','','Disable Karazhan'),
 (4,4768,0,'','',''),
 (4,4769,0,'','',''),
 (4,4770,0,'','',''),
@@ -876,6 +916,7 @@ INSERT INTO `disables` VALUES
 (4,13203,0,'','',''),
 (4,13204,0,'','',''),
 (4,13206,0,'','',''),
+(7,180619,0,'0','0','Ignore LoS by Ossirian Crystal'),
 (7,185206,0,'','',''),
 (7,185213,0,'','',''),
 (7,185214,0,'','',''),
@@ -892,10 +933,13 @@ INSERT INTO `disables` VALUES
 (7,201716,0,'','','');
 /*!40000 ALTER TABLE `disables` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- Dump completed on 2026-06-01 22:39:46
